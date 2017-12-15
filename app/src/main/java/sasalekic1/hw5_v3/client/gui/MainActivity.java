@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements ResultAppender {
             public void onClick(View view) {
                 submitBtn.setEnabled(false);
                 mProgressBar.setVisibility(View.VISIBLE);
-                srvConnection.reverse(strField.getText().toString());
+                srvConnection.mssging(strField.getText().toString());
             }
         });
 

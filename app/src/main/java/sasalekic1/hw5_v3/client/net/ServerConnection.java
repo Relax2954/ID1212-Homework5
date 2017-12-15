@@ -30,9 +30,9 @@ public class ServerConnection implements Runnable
     /**
      * Creates a new instance. Does not connect to the server.
      *
-     * @param gui  The client se.kth.id2212.ex5.wordreverter.gui object.
-     * @param host The reverse server host name.
-     * @param port The reverse server port number.
+     * @param gui  The client gui object.
+     * @param host The  server host name.
+     * @param port The  server port number.
      */
     public ServerConnection(final ResultAppender gui, String host, int port)
     {
@@ -44,8 +44,8 @@ public class ServerConnection implements Runnable
     /**
      * The run method of the communication thread. First connects to
      * the server using the host name and port number specified in the
-     * constructor. Second waits to receive a string from the se.kth.id2212.ex5.wordreverter.gui and sends
-     * that to the reverse server. This is done once, then the thread dies.
+     * constructor. Second waits to receive a string from the gui and sends
+     * that to the server.
      */
     @Override
     public void run()
@@ -80,11 +80,11 @@ public class ServerConnection implements Runnable
     }
 
     /**
-     * Used to submit a string for reversal.
+     * Used to submit a string.
      *
-     * @param text The string to reverse.
+     * @param text The string to be checked.
      */
-    public void reverse(String text)
+    public void mssging(String text)
     {
         if(text.contains("start")) {
             Message mysend = new Message(MsgType.START, "game");
@@ -97,14 +97,13 @@ public class ServerConnection implements Runnable
     }
 
     /**
-     * Waits to receive a string from the se.kth.id2212.ex5.wordreverter.gui and sends that to the
-     * reverse server.
+     * Waits to receive a string from the server
      */
     void callServer() {
         while (true) {
             String result = "proerski";
             try {
-                Message toServer = msgg.take(); //IF I TAKE AN OBJECT?
+                Message toServer = msgg.take(); //IF I TAKE AN OBJECT
                 out.writeObject(toServer);
                 out.flush();
                 try {
