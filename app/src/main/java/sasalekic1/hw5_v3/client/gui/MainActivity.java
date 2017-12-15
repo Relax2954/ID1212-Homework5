@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements ResultAppender {
     private TextView resField;
 
     /**
-     * Called when the activity is first created.
+      Called when the activity is first created.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
