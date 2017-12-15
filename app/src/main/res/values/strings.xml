@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HW5-V3</string>
+    <string name="SRV">192.168.1.198</string>
+    <string name="SRV_PORT">8080</string>
+</resources>
